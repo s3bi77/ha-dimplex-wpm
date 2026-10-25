@@ -1,0 +1,274 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dimplex heat pump",
+        "description": "Address of the gateway (NWPM or NWPM Touch) with Modbus TCP enabled.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "unit": "Unit ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the heat pump manager."
+    },
+    "abort": {
+      "already_configured": "This heat pump is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "scan_interval": "Polling interval (seconds)",
+          "cooling_room": "Room address for cooling demand"
+        },
+        "data_description": {
+          "cooling_room": "0 = off. 50–59 circuit 1, 60–69 circuit 2, 70–79 circuit 3. The room setpoint is written every 10 minutes."
+        }
+      }
+    },
+    "error": {
+      "invalid_room": "Allowed values are 0 or 50 to 79."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Outdoor temperature"
+      },
+      "return_temperature": {
+        "name": "Return temperature"
+      },
+      "hot_water_temperature": {
+        "name": "Hot water temperature"
+      },
+      "flow_temperature": {
+        "name": "Flow temperature"
+      },
+      "source_inlet_temperature": {
+        "name": "Heat source inlet temperature"
+      },
+      "source_outlet_temperature": {
+        "name": "Heat source outlet temperature"
+      },
+      "return_target_temperature": {
+        "name": "Return target temperature"
+      },
+      "hot_water_target_temperature": {
+        "name": "Current hot water target"
+      },
+      "room_temperature": {
+        "name": "Room temperature"
+      },
+      "room_humidity": {
+        "name": "Room humidity"
+      },
+      "cooling_flow_temperature": {
+        "name": "Cooling flow temperature"
+      },
+      "cooling_return_temperature": {
+        "name": "Cooling return temperature"
+      },
+      "status": {
+        "name": "Status"
+      },
+      "lock": {
+        "name": "Lock reason"
+      },
+      "fault": {
+        "name": "Fault"
+      },
+      "sensor_fault": {
+        "name": "Sensor fault"
+      },
+      "runtime_compressor_1": {
+        "name": "Runtime compressor 1"
+      },
+      "runtime_compressor_2": {
+        "name": "Runtime compressor 2"
+      },
+      "runtime_primary_pump": {
+        "name": "Runtime primary pump"
+      },
+      "runtime_second_heat_source": {
+        "name": "Runtime second heat source"
+      },
+      "runtime_heating_pump": {
+        "name": "Runtime heating pump"
+      },
+      "runtime_hot_water_pump": {
+        "name": "Runtime hot water pump"
+      },
+      "runtime_flange_heater": {
+        "name": "Runtime flange heater"
+      },
+      "runtime_pool_pump": {
+        "name": "Runtime pool pump"
+      },
+      "runtime_auxiliary_pump": {
+        "name": "Runtime auxiliary pump"
+      },
+      "heat_heating": {
+        "name": "Heat energy heating"
+      },
+      "heat_hot_water": {
+        "name": "Heat energy hot water"
+      },
+      "environmental_energy": {
+        "name": "Environmental energy"
+      },
+      "heat_power": {
+        "name": "Heat output"
+      },
+      "electric_power": {
+        "name": "Electric power"
+      },
+      "software_version": {
+        "name": "Software version"
+      }
+    },
+    "binary_sensor": {
+      "compressor_1": {
+        "name": "Compressor 1"
+      },
+      "compressor_2": {
+        "name": "Compressor 2"
+      },
+      "primary_pump": {
+        "name": "Primary pump"
+      },
+      "second_heat_source": {
+        "name": "Second heat source"
+      },
+      "heating_pump": {
+        "name": "Heating pump"
+      },
+      "hot_water_pump": {
+        "name": "Hot water pump"
+      },
+      "mixer_1_open": {
+        "name": "Mixer 1 open"
+      },
+      "mixer_1_close": {
+        "name": "Mixer 1 close"
+      },
+      "auxiliary_pump": {
+        "name": "Auxiliary circulation pump"
+      },
+      "flange_heater": {
+        "name": "Flange heater"
+      },
+      "heating_pump_2": {
+        "name": "Heating pump M15"
+      },
+      "mixer_2_open": {
+        "name": "Mixer 2 open"
+      },
+      "mixer_2_close": {
+        "name": "Mixer 2 close"
+      },
+      "pool_pump": {
+        "name": "Pool pump"
+      },
+      "heating_pump_3": {
+        "name": "Heating pump M14"
+      },
+      "cooling_pump": {
+        "name": "Cooling pump"
+      },
+      "heating_pump_4": {
+        "name": "Heating pump M20"
+      },
+      "solar_pump": {
+        "name": "Solar pump"
+      },
+      "primary_pump_cooling": {
+        "name": "Primary pump cooling"
+      },
+      "thermostat_cooling": {
+        "name": "Room thermostats in cooling"
+      },
+      "fault_output": {
+        "name": "Collective fault"
+      },
+      "smart_grid_1": {
+        "name": "Smart grid input 1"
+      },
+      "smart_grid_2": {
+        "name": "Smart grid input 2"
+      },
+      "utility_lock": {
+        "name": "Utility lock"
+      },
+      "external_lock_input": {
+        "name": "External lock input"
+      }
+    },
+    "number": {
+      "hot_water_minimum": {
+        "name": "Hot water minimum"
+      },
+      "hot_water_maximum": {
+        "name": "Hot water maximum"
+      },
+      "hot_water_hysteresis": {
+        "name": "Hot water hysteresis"
+      },
+      "heating_curve_end": {
+        "name": "Heating curve end point"
+      },
+      "heating_curve_shift": {
+        "name": "Heating curve shift"
+      },
+      "party_hours": {
+        "name": "Party duration"
+      },
+      "holiday_days": {
+        "name": "Holiday duration"
+      },
+      "cooling_room_setpoint": {
+        "name": "Cooling room setpoint"
+      }
+    },
+    "select": {
+      "operating_mode": {
+        "name": "Operating mode",
+        "state": {
+          "summer": "Summer",
+          "winter": "Winter",
+          "holiday": "Holiday",
+          "party": "Party",
+          "second_heat_source": "Second heat source",
+          "cooling": "Cooling"
+        }
+      },
+      "smart_grid": {
+        "name": "Smart grid",
+        "state": {
+          "hardware": "Hardware input",
+          "normal": "Normal (yellow)",
+          "boost": "Boost (green)",
+          "reduced": "Reduced (red)",
+          "boost_max": "Maximum (dark green)"
+        }
+      },
+      "external_lock": {
+        "name": "External lock",
+        "state": {
+          "hardware": "Hardware input",
+          "inactive": "Inactive",
+          "active": "Active"
+        }
+      }
+    },
+    "water_heater": {
+      "hot_water": {
+        "name": "Hot water"
+      }
+    }
+  }
+}
