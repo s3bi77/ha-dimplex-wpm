@@ -45,6 +45,7 @@ async def test_sensors(hass: HomeAssistant, fake_client) -> None:
     assert hass.states.get("binary_sensor.warmepumpe_compressor_1").state == "on"
     assert hass.states.get("select.warmepumpe_operating_mode").state == "winter"
     assert hass.states.get("water_heater.warmepumpe_hot_water").attributes["temperature"] == 53
+    assert hass.states.get("water_heater.warmepumpe_hot_water").state == "heat_pump"
     assert hass.states.get("number.warmepumpe_heating_curve_shift").state == "0"
     assert hass.states.get("sensor.warmepumpe_room_humidity").state == "48.0"
 

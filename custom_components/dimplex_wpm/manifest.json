@@ -12,5 +12,5 @@
   "issue_tracker": "https://github.com/s3bi77/ha-dimplex-wpm/issues",
   "loggers": ["custom_components.dimplex_wpm"],
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

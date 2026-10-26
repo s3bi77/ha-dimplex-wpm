@@ -4,7 +4,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.water_heater import WaterHeaterEntity, WaterHeaterEntityFeature
+from homeassistant.components.water_heater import (
+    STATE_HEAT_PUMP,
+    WaterHeaterEntity,
+    WaterHeaterEntityFeature,
+)
 from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
@@ -32,6 +36,8 @@ class DimplexHotWater(DimplexEntity, WaterHeaterEntity):
     _attr_supported_features = WaterHeaterEntityFeature.TARGET_TEMPERATURE
     _attr_temperature_unit = UnitOfTemperature.CELSIUS
     _attr_target_temperature_step = 1
+    # Ohne Betriebsart wäre der Zustand "unbekannt"
+    _attr_current_operation = STATE_HEAT_PUMP
 
     def __init__(self, coordinator: DimplexCoordinator) -> None:
         super().__init__(coordinator, "hot_water")
