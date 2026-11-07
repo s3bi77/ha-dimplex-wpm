@@ -14,11 +14,11 @@ from custom_components.dimplex_wpm.const import DOMAIN
 
 from .conftest import FakeClient
 
-DATA = {"host": "172.20.3.65", "port": 502, "unit": 1}
+DATA = {"host": "192.0.2.10", "port": 502, "unit": 1}
 
 
 async def _setup(hass: HomeAssistant, options: dict | None = None) -> MockConfigEntry:
-    entry = MockConfigEntry(domain=DOMAIN, data=DATA, options=options or {}, unique_id="172.20.3.65:502")
+    entry = MockConfigEntry(domain=DOMAIN, data=DATA, options=options or {}, unique_id="192.0.2.10:502")
     entry.add_to_hass(hass)
     assert await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()

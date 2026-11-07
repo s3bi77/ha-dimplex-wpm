@@ -1,6 +1,8 @@
 # Dimplex Wärmepumpe
 
-Home-Assistant-Integration für Dimplex-Wärmepumpen mit Wärmepumpenmanager (WPM). Die Anbindung läuft lokal über Modbus TCP, ohne Cloud.
+Inoffizielle Home-Assistant-Integration für Dimplex-Wärmepumpen mit Wärmepumpenmanager (WPM). Die Anbindung läuft lokal über Modbus TCP, ohne Cloud.
+
+> **Hinweis:** Dieses Projekt steht in keiner Verbindung zu Glen Dimplex Deutschland GmbH oder Dimplex und wird von ihnen weder unterstützt noch geprüft. „Dimplex“ ist eine Marke ihres jeweiligen Inhabers und wird hier nur genannt, um die unterstützten Geräte zu bezeichnen.
 
 ## Voraussetzungen
 
@@ -49,3 +51,9 @@ Selten genutzte Ausgänge (zweiter Verdichter, weitere Heizungspumpen, Mischer, 
 pip install pytest-homeassistant-custom-component
 pytest
 ```
+
+## Lizenz und Haftung
+
+MIT-Lizenz, siehe [LICENSE](LICENSE). Nutzung auf eigene Verantwortung: Die Integration schreibt Einstellungen (Betriebsmodus, Warmwasser, Heizkurve, Smart Grid, Sperren) in den Wärmepumpenmanager. Falsche Werte können Komfort, Verbrauch oder den Betrieb der Anlage beeinträchtigen. Die Registerbelegung stammt aus der öffentlichen Datenpunktliste des Herstellers; abweichende Softwarestände können sich anders verhalten.
+
+„Home Assistant“ ist eine Marke der Open Home Foundation. Dieses Projekt ist kein offizieller Bestandteil von Home Assistant.
