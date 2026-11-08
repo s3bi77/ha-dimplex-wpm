@@ -26,13 +26,13 @@ Alle Entitäten hängen am Gerät „Wärmepumpe“.
 
 | Plattform | Entitäten |
 |---|---|
-| Sensor | Außen-, Vorlauf-, Rücklauf-, Warmwasser-, Wärmequellentemperaturen, Rücklauf-Soll, Raumtemperatur und -feuchte; Status-, Sperr-, Stör- und Sensorfehlermeldung als Text (Rohwert im Attribut `code`); Laufzeiten; Wärmemengen Heizen und Warmwasser, Umweltenergie (für das Energie-Dashboard); Wärmeleistung und elektrische Leistung; Softwarestand |
+| Sensor | Außen-, Vorlauf-, Rücklauf-, Warmwasser-, Wärmequellentemperaturen, Rücklauf-Soll, Ist und Soll 2. Heizkreis, Kühlen passiv Vor-/Rücklauf, Raumtemperatur und -feuchte; Status-, Sperr-, Stör- und Sensorfehlermeldung als Text (Rohwert im Attribut `code`); Laufzeiten; Wärmemengen Heizen und Warmwasser, Umweltenergie (für das Energie-Dashboard); Wärmeleistung und elektrische Leistung; Softwarestand |
 | Binärsensor | Verdichter, Pumpen, Mischer, Flanschheizung, 2. Wärmeerzeuger, Umschaltung Raumthermostate, Sammelstörung; Eingänge EVU-Sperre, Sperre extern, Smart Grid |
 | Wasserheizer | Warmwasser mit Ist- und Solltemperatur (Grenzen aus Minimal-/Maximalwert) |
 | Auswahl | Betriebsmodus (Sommer, Winter, Urlaub, Party, 2. Wärmeerzeuger, Kühlen); Smart Grid (Hardwareeingang, rot, gelb, grün, dunkelgrün); Sperre extern |
 | Zahl | Warmwasser minimal/maximal/Hysterese, Heizkurve Endpunkt und Parallelverschiebung (Heizkreis 1), Party- und Urlaubsdauer, Kühl-Raumsollwert |
 
-Selten genutzte Ausgänge (zweiter Verdichter, weitere Heizungspumpen, Mischer, Schwimmbad, Solar) sind angelegt, aber standardmäßig deaktiviert.
+Selten genutzte Ausgänge (zweiter Verdichter, weitere Heizungspumpen, Mischer, Schwimmbad, Solar) sind angelegt, aber standardmäßig deaktiviert. Das gilt auch für Ist- und Solltemperatur des 2. Heizkreises und die Temperaturen der passiven Kühlung. Wärmequellen-Eintritt sowie Raumtemperatur und -feuchte sind ebenfalls deaktiviert: Den Eintrittsfühler haben nur Wärmepumpen mit elektronischem Expansionsventil, und die Raumwerte liefert nur ein busfähiger Raumfühler (RT-RTH Econ). Ohne diese Teile meldet der WPM feste Werte.
 
 ## Verhalten
 

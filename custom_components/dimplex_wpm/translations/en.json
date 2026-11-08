@@ -58,6 +58,12 @@
       "return_target_temperature": {
         "name": "Return target temperature"
       },
+      "circuit_2_temperature": {
+        "name": "Circuit 2 temperature"
+      },
+      "circuit_2_target_temperature": {
+        "name": "Circuit 2 target temperature"
+      },
       "hot_water_target_temperature": {
         "name": "Current hot water target"
       },

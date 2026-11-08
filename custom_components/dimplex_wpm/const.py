@@ -21,9 +21,10 @@ ROOM_SWITCH_DELAY = 3.0
 # Zusammenhängende Registerblöcke, die pro Zyklus gelesen werden
 REGISTER_BLOCKS: tuple[tuple[int, int], ...] = (
     (1, 7),  # Außen, Rücklauf, Warmwasser, (4), Vorlauf, Quelle ein, Quelle aus
+    (9, 1),  # Vorlauf 2. Heizkreis (R5)
     (11, 3),  # Raumtemperatur 1, (12), Raumfeuchte 1
     (19, 2),  # Kühlen passiv Vorlauf/Rücklauf
-    (53, 1),  # Rücklauf-Soll
+    (53, 2),  # Rücklauf-Soll, Soll 2. Heizkreis
     (58, 1),  # Warmwasser-Soll (Betrieb)
     (65, 3),  # Softwarestand
     (71, 9),  # Laufzeiten
