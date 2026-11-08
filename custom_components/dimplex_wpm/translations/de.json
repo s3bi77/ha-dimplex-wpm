@@ -58,6 +58,12 @@
       "return_target_temperature": {
         "name": "Rücklauf Solltemperatur"
       },
+      "circuit_2_temperature": {
+        "name": "Temperatur 2. Heizkreis"
+      },
+      "circuit_2_target_temperature": {
+        "name": "Solltemperatur 2. Heizkreis"
+      },
       "hot_water_target_temperature": {
         "name": "Warmwasser Solltemperatur aktuell"
       },

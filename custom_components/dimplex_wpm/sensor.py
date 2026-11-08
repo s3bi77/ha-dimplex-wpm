@@ -139,11 +139,15 @@ SENSORS: tuple[DimplexSensorDescription, ...] = (
     _temp("return_temperature", 2),
     _temp("hot_water_temperature", 3),
     _temp("flow_temperature", 5),
-    _temp("source_inlet_temperature", 6),
+    # Nur bei Wärmepumpen mit elektronischem Expansionsventil vorhanden, sonst ein fester Wert
+    _temp("source_inlet_temperature", 6, enabled=False),
     _temp("source_outlet_temperature", 7),
     _temp("return_target_temperature", 53),
+    _temp("circuit_2_temperature", 9, enabled=False),
+    _temp("circuit_2_target_temperature", 54, enabled=False),
     _temp("hot_water_target_temperature", 58, enabled=False),
-    _temp("room_temperature", 11),
+    # Raumwerte nur mit busfähigem Raumfühler (RT-RTH Econ), sonst 0
+    _temp("room_temperature", 11, enabled=False),
     DimplexSensorDescription(
         key="room_humidity",
         registers=(13,),
@@ -152,6 +156,7 @@ SENSORS: tuple[DimplexSensorDescription, ...] = (
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement=PERCENTAGE,
         suggested_display_precision=0,
+        entity_registry_enabled_default=False,
     ),
     _temp("cooling_flow_temperature", 19, enabled=False),
     _temp("cooling_return_temperature", 20, enabled=False),

@@ -7,6 +7,7 @@ from datetime import timedelta
 from homeassistant.config_entries import SOURCE_USER
 from homeassistant.core import HomeAssistant
 from homeassistant.data_entry_flow import FlowResultType
+from homeassistant.helpers import entity_registry as er
 from homeassistant.util import dt as dt_util
 from pytest_homeassistant_custom_component.common import MockConfigEntry, async_fire_time_changed
 
@@ -47,7 +48,11 @@ async def test_sensors(hass: HomeAssistant, fake_client) -> None:
     assert hass.states.get("water_heater.warmepumpe_hot_water").attributes["temperature"] == 53
     assert hass.states.get("water_heater.warmepumpe_hot_water").state == "heat_pump"
     assert hass.states.get("number.warmepumpe_heating_curve_shift").state == "0"
-    assert hass.states.get("sensor.warmepumpe_room_humidity").state == "48.0"
+    # Fühler, die nicht jede Anlage hat, sind standardmäßig deaktiviert
+    registry = er.async_get(hass)
+    for key in ("room_temperature", "room_humidity", "heat_source_inlet_temperature", "circuit_2_temperature"):
+        entry = registry.async_get(f"sensor.warmepumpe_{key}")
+        assert entry is not None and entry.disabled_by is er.RegistryEntryDisabler.INTEGRATION
 
 
 async def test_missing_registers_are_skipped(hass: HomeAssistant, fake_client, monkeypatch) -> None:
